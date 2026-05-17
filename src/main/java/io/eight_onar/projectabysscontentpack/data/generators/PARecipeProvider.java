@@ -20,10 +20,10 @@ public class PARecipeProvider extends RecipeProvider implements IConditionBuilde
     private static final List<ItemLike> NYTHERITE_SMELTABLES = List.of(PAItems.RAW_NYTHERITE.get(),
             PABlocks.NYTHERITE_ORE.get()
     );
-    private static final List<ItemLike> UMBRYTE_SMELTABLES = List.of(PAItems.RAW_NYTHERITE.get(),
+    private static final List<ItemLike> UMBRYTE_SMELTABLES = List.of(PAItems.RAW_UMBRYTE.get(),
             PABlocks.UMBRYTE_ORE.get()
     );
-    private static final List<ItemLike> GRAVIUM_SMELTABLES = List.of(PAItems.RAW_NYTHERITE.get(),
+    private static final List<ItemLike> GRAVIUM_SMELTABLES = List.of(PAItems.RAW_GRAVIUM.get(),
             PABlocks.GRAVIUM_ORE.get()
     );
 
@@ -40,6 +40,7 @@ public class PARecipeProvider extends RecipeProvider implements IConditionBuilde
         oreSmelting(pWriter, NYTHERITE_SMELTABLES, RecipeCategory.MISC, PAItems.NYTHERITE_INGOT.get(), 0.25f, 150, "nytherite");
         oreSmelting(pWriter, UMBRYTE_SMELTABLES, RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get(), 0.25f, 150, "umbryte");
         oreSmelting(pWriter, GRAVIUM_SMELTABLES, RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get(), 0.25f, 150, "gravium");
+
     }
 
 
