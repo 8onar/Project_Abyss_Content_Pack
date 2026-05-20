@@ -55,7 +55,11 @@ public class PABlockTagGenerator extends BlockTagsProvider {
                 PABlocks.GRAVIUM_BLOCK.get()
         );
 
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL);
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
+                PABlocks.NYTHERITE_ORE.get(),
+                PABlocks.UMBRYTE_ORE.get(),
+                PABlocks.GRAVIUM_ORE.get()
+        );
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
     }
 }
