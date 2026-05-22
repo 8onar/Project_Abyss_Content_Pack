@@ -41,24 +41,15 @@ public class PARecipeProvider extends RecipeProvider implements IConditionBuilde
         oreSmelting(pWriter, UMBRYTE_SMELTABLES, RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get(), 0.25f, 150, "umbryte");
         oreSmelting(pWriter, GRAVIUM_SMELTABLES, RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get(), 0.25f, 150, "gravium");
 
+        nineBlockStorageRecipes(pWriter, RecipeCategory.BUILDING_BLOCKS, PAItems.NYTHERITE_INGOT.get(), RecipeCategory.MISC, PABlocks.NYTHERITE_BLOCK.get());
+        nineBlockStorageRecipes(pWriter, RecipeCategory.BUILDING_BLOCKS, PAItems.UMBRYTE_INGOT.get(), RecipeCategory.MISC, PABlocks.UMBRYTE_BLOCK.get());
+        nineBlockStorageRecipes(pWriter, RecipeCategory.BUILDING_BLOCKS, PAItems.GRAVIUM_INGOT.get(), RecipeCategory.MISC, PABlocks.GRAVIUM_BLOCK.get());
     }
-
-
-
-
-
 
 
     protected static void nineBlockStorageRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pUnpackedCategory, ItemLike pUnpacked, RecipeCategory pPackedCategory, ItemLike pPacked) {
-        nineBlockStorageRecipes(pFinishedRecipeConsumer, pUnpackedCategory, pUnpacked, pPackedCategory, pPacked,
-                getSimpleRecipeName(pPacked), (String)null,
-                getSimpleRecipeName(pUnpacked), (String)null);
+        nineBlockStorageRecipes(pFinishedRecipeConsumer, pUnpackedCategory, pUnpacked, pPackedCategory, pPacked,ProjectAbyssContentPack.MOD_ID+":"+ getSimpleRecipeName(pPacked), (String)null, getSimpleRecipeName(pUnpacked), (String)null);
     }
-    protected static void nineBlockStorageRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pUnpackedCategory, ItemLike pUnpacked, RecipeCategory pPackedCategory, ItemLike pPacked, String pPackedName, @Nullable String pPackedGroup, String pUnpackedName, @Nullable String pUnpackedGroup) {
-        ShapelessRecipeBuilder.shapeless(pUnpackedCategory, pUnpacked, 9).requires(pPacked).group(pUnpackedGroup).unlockedBy(getHasName(pPacked), has(pPacked)).save(pFinishedRecipeConsumer, new ResourceLocation(pUnpackedName));
-        ShapedRecipeBuilder.shaped(pPackedCategory, pPacked).define('#', pUnpacked).pattern("###").pattern("###").pattern("###").group(pPackedGroup).unlockedBy(getHasName(pUnpacked), has(pUnpacked)).save(pFinishedRecipeConsumer, new ResourceLocation(pPackedName));
-    }
-
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");

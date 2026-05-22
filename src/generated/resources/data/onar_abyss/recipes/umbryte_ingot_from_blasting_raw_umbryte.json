@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 250,
+  "experience": 0.25,
+  "group": "umbryte",
+  "ingredient": {
+    "item": "onar_abyss:raw_umbryte"
+  },
+  "result": "onar_abyss:umbryte_ingot"
+}
