@@ -49,7 +49,6 @@ public class PARecipeProvider extends RecipeProvider implements IConditionBuilde
         nineBlockStorageRecipes(pWriter,RecipeCategory.MISC, PAItems.GRAVIUM_NUGGET.get(), RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get());
     }
 
-
     protected static void nineBlockStorageRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pUnpackedCategory, ItemLike pUnpacked, RecipeCategory pPackedCategory, ItemLike pPacked) {
         nineBlockStorageRecipes(pFinishedRecipeConsumer, pUnpackedCategory, pUnpacked, pPackedCategory, pPacked,ProjectAbyssContentPack.MOD_ID+":"+ getSimpleRecipeName(pPacked), (String)null, getSimpleRecipeName(pUnpacked), (String)null);
     }
