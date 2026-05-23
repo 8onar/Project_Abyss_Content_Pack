@@ -38,7 +38,7 @@ public class PACreativeTab {
                     .icon(() -> PABlocks.BLOCKY.get().asItem().getDefaultInstance())
                     .title(Component.translatable("ctab.colored_abyss_blocks"))
                     .displayItems((pParameters, output) -> {
-                        PABlocks.BLOCKS.getEntries().forEach(block -> output.accept(block.get()));
+                       output.accept(PABlocks.BLOCKY.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> TAB_NATURAL_ABYSS_BLOCKS = CREATIVE_MODE_TABS.register("tab_natural_abyss_blocks",
             () -> CreativeModeTab
@@ -76,7 +76,7 @@ public class PACreativeTab {
                     .displayItems((pParameters, output) -> {
                         output.accept(PAItems.PUPPY.get());
                     }).build());
-    public static final RegistryObject<CreativeModeTab> TAB_INGRIDIENTS_ABYSS_ITEMS = CREATIVE_MODE_TABS.register("tab_ingridients_abyss_items",
+    public static final RegistryObject<CreativeModeTab> TAB_INGREDIENTS_ABYSS_ITEMS = CREATIVE_MODE_TABS.register("tab_ingredients_abyss_items",
             ()-> CreativeModeTab
                     .builder()
                     .icon(() -> PAItems.PUPPY.get().getDefaultInstance())
@@ -88,6 +88,9 @@ public class PACreativeTab {
                         output.accept(PAItems.RAW_NYTHERITE.get());
                         output.accept(PAItems.RAW_UMBRYTE.get());
                         output.accept(PAItems.RAW_GRAVIUM.get());
+                        output.accept(PAItems.NYTHERITE_NUGGET.get());
+                        output.accept(PAItems.UMBRYTE_NUGGET.get());
+                        output.accept(PAItems.GRAVIUM_NUGGET.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> TAB_FOOD_DRINKS_ABYSS_ITEMS = CREATIVE_MODE_TABS.register("tab_food_drinks_abyss_items",
             ()-> CreativeModeTab

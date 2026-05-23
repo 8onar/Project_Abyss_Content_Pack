@@ -25,6 +25,9 @@
   "item.onar_abyss.raw_nytherite": "Raw Nytherite",
   "item.onar_abyss.raw_umbryte": "Raw Umbryte",
   "item.onar_abyss.raw_gravium": "Raw Gravium",
+  "item.onar_abyss.nytherite_nugget": "Nytherite Nugget",
+  "item.onar_abyss.umbryte_nugget": "Umbryte Nugget",
+  "item.onar_abyss.gravium_nugget": "Gravium Nugget",
 
   "ctab.building_abyss_blocks": "Abyss Building Blocks",
   "ctab.colored_abyss_blocks": "Abyss Colored Blocks",

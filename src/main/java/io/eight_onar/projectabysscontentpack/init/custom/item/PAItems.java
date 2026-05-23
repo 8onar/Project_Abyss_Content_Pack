@@ -2,6 +2,7 @@ package io.eight_onar.projectabysscontentpack.init.custom.item;
 
 import io.eight_onar.projectabysscontentpack.ProjectAbyssContentPack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.PumpkinBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,6 +26,13 @@ public class PAItems {
     public static final RegistryObject<Item> UMBRYTE_INGOT = ITEMS.register("umbryte_ingot",
             () -> new Item(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> GRAVIUM_INGOT = ITEMS.register("gravium_ingot",
+            () -> new Item(new Item.Properties().stacksTo(64)));
+
+    public static final RegistryObject<Item> NYTHERITE_NUGGET = ITEMS.register("nytherite_nugget",
+            () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Item> UMBRYTE_NUGGET = ITEMS.register("umbryte_nugget",
+            () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Item> GRAVIUM_NUGGET = ITEMS.register("gravium_nugget",
             () -> new Item(new Item.Properties().stacksTo(64)));
 
     public static void register(IEventBus eventBus){

@@ -24,7 +24,10 @@ public class PAItemModelProvider extends ItemModelProvider {
         simpleItem(PAItems.NYTHERITE_INGOT);
         simpleItem(PAItems.UMBRYTE_INGOT);
         simpleItem(PAItems.GRAVIUM_INGOT);
-        
+        simpleItem(PAItems.NYTHERITE_NUGGET);
+        simpleItem(PAItems.UMBRYTE_NUGGET);
+        simpleItem(PAItems.GRAVIUM_NUGGET);
+
     }
     private ItemModelBuilder simpleItem(RegistryObject<Item> item){
         return withExistingParent(item.getId().getPath(),

@@ -36,14 +36,17 @@ public class PARecipeProvider extends RecipeProvider implements IConditionBuilde
         oreBlasting(pWriter, NYTHERITE_SMELTABLES, RecipeCategory.MISC, PAItems.NYTHERITE_INGOT.get(), 0.25f, 250, "nytherite");
         oreBlasting(pWriter, UMBRYTE_SMELTABLES, RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get(), 0.25f, 250, "umbryte");
         oreBlasting(pWriter, GRAVIUM_SMELTABLES, RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get(), 0.25f, 250, "gravium");
-
         oreSmelting(pWriter, NYTHERITE_SMELTABLES, RecipeCategory.MISC, PAItems.NYTHERITE_INGOT.get(), 0.25f, 150, "nytherite");
         oreSmelting(pWriter, UMBRYTE_SMELTABLES, RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get(), 0.25f, 150, "umbryte");
         oreSmelting(pWriter, GRAVIUM_SMELTABLES, RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get(), 0.25f, 150, "gravium");
-
-        nineBlockStorageRecipes(pWriter, RecipeCategory.BUILDING_BLOCKS, PAItems.NYTHERITE_INGOT.get(), RecipeCategory.MISC, PABlocks.NYTHERITE_BLOCK.get());
-        nineBlockStorageRecipes(pWriter, RecipeCategory.BUILDING_BLOCKS, PAItems.UMBRYTE_INGOT.get(), RecipeCategory.MISC, PABlocks.UMBRYTE_BLOCK.get());
-        nineBlockStorageRecipes(pWriter, RecipeCategory.BUILDING_BLOCKS, PAItems.GRAVIUM_INGOT.get(), RecipeCategory.MISC, PABlocks.GRAVIUM_BLOCK.get());
+//ingots <-> blocks
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, PAItems.NYTHERITE_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, PABlocks.NYTHERITE_BLOCK.get());
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, PABlocks.UMBRYTE_BLOCK.get());
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, PABlocks.GRAVIUM_BLOCK.get());
+//ingots <-> nuggets
+        nineBlockStorageRecipes(pWriter,RecipeCategory.MISC, PAItems.NYTHERITE_NUGGET.get(), RecipeCategory.MISC, PAItems.NYTHERITE_INGOT.get());
+        nineBlockStorageRecipes(pWriter,RecipeCategory.MISC, PAItems.UMBRYTE_NUGGET.get(), RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get());
+        nineBlockStorageRecipes(pWriter,RecipeCategory.MISC, PAItems.GRAVIUM_NUGGET.get(), RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get());
     }
 
 
