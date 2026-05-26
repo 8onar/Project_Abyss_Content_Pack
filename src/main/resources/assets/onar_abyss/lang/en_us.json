@@ -39,5 +39,12 @@
   "ctab.food_drinks_abyss_items": "Abyss Food & Drinks",
   "ctab.combat_abyss_items": "Abyss Combat",
 
+  "block.onar_abyss.dragon_blood_leaves": "Dragon Blood Leaves",
+  "block.onar_abyss.dragon_blood_log": "Dragon Blood Log",
+  "block.onar_abyss.dragon_blood_planks": "Dragon Blood Planks",
+  "block.onar_abyss.dragon_blood_slab": "Dragon Blood Slab",
+  "block.onar_abyss.dragon_blood_stairs": "Dragon Blood Stairs",
+  "block.onar_abyss.dragon_blood_wood": "Dragon Blood Wood",
+
   "ctab.misc_abyss_items": "Abyss Misc"
 }

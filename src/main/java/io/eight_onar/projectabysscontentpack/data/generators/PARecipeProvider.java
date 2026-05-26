@@ -3,16 +3,18 @@ package io.eight_onar.projectabysscontentpack.data.generators;
 import io.eight_onar.projectabysscontentpack.ProjectAbyssContentPack;
 import io.eight_onar.projectabysscontentpack.init.custom.block.PABlocks;
 import io.eight_onar.projectabysscontentpack.init.custom.item.PAItems;
+import io.eight_onar.projectabysscontentpack.init.custom.tags.PATags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.RegistryObject;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -44,13 +46,25 @@ public class PARecipeProvider extends RecipeProvider implements IConditionBuilde
         nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, PABlocks.UMBRYTE_BLOCK.get());
         nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, PABlocks.GRAVIUM_BLOCK.get());
 //ingots <-> nuggets
-        nineBlockStorageRecipes(pWriter,RecipeCategory.MISC, PAItems.NYTHERITE_NUGGET.get(), RecipeCategory.MISC, PAItems.NYTHERITE_INGOT.get());
-        nineBlockStorageRecipes(pWriter,RecipeCategory.MISC, PAItems.UMBRYTE_NUGGET.get(), RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get());
-        nineBlockStorageRecipes(pWriter,RecipeCategory.MISC, PAItems.GRAVIUM_NUGGET.get(), RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get());
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, PAItems.NYTHERITE_NUGGET.get(), RecipeCategory.MISC, PAItems.NYTHERITE_INGOT.get());
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, PAItems.UMBRYTE_NUGGET.get(), RecipeCategory.MISC, PAItems.UMBRYTE_INGOT.get());
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, PAItems.GRAVIUM_NUGGET.get(), RecipeCategory.MISC, PAItems.GRAVIUM_INGOT.get());
+
+        slab(pWriter, RecipeCategory.BUILDING_BLOCKS, PABlocks.DRAGON_BLOOD_SLAB.get().asItem(), PABlocks.DRAGON_BLOOD_PLANKS.get().asItem());
+
+        stairBuilder(PABlocks.DRAGON_BLOOD_STAIRS.get().asItem(), Ingredient.of(PABlocks.DRAGON_BLOOD_PLANKS.get())).unlockedBy(getHasName(PABlocks.DRAGON_BLOOD_PLANKS.get()), has(PABlocks.DRAGON_BLOOD_PLANKS.get())).save(pWriter);
+
+        planksFromLog(pWriter, PABlocks.DRAGON_BLOOD_PLANKS.get().asItem(), PATags.Item.DRAGON_BLOOD_LOGS, 4);
+
+        woodFromLogs(pWriter, PABlocks.DRAGON_BLOOD_WOOD.get().asItem(), PABlocks.DRAGON_BLOOD_LOG.get().asItem());
+
     }
 
     protected static void nineBlockStorageRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pUnpackedCategory, ItemLike pUnpacked, RecipeCategory pPackedCategory, ItemLike pPacked) {
         nineBlockStorageRecipes(pFinishedRecipeConsumer, pUnpackedCategory, pUnpacked, pPackedCategory, pPacked,ProjectAbyssContentPack.MOD_ID+":"+ getSimpleRecipeName(pPacked), (String)null, getSimpleRecipeName(pUnpacked), (String)null);
+    }
+    protected static void slab(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pPressurePlate, ItemLike pMaterial) {
+        slabBuilder(pCategory, pPressurePlate, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
@@ -62,10 +76,8 @@ public class PARecipeProvider extends RecipeProvider implements IConditionBuilde
     }
 
     protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
-        for(ItemLike itemlike : pIngredients) {
+        for (ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike)).save(pFinishedRecipeConsumer, ProjectAbyssContentPack.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
-
     }
-
 }

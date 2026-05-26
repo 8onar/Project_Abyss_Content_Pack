@@ -6,6 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -46,6 +47,22 @@ public class PABlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> GRAVIUM_BLOCK = registerBlock("gravium_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
+
+//DragonBloodTreeBlocks
+    public static final  RegistryObject<Block> DRAGON_BLOOD_LEAVES = registerBlock("dragon_blood_leaves",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final  RegistryObject<Block> DRAGON_BLOOD_LOG = registerBlock("dragon_blood_log",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final  RegistryObject<Block> DRAGON_BLOOD_PLANKS = registerBlock("dragon_blood_planks",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+//    public static final  RegistryObject<SaplingBlock> DRAGON_BLOOD_SAPLING = registerBlock("dragon_blood_sapling",
+//        () -> new SaplingBlock();
+    public static final  RegistryObject<SlabBlock> DRAGON_BLOOD_SLAB = registerBlock("dragon_blood_slab",
+        () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+        public static final  RegistryObject<StairBlock> DRAGON_BLOOD_STAIRS = registerBlock("dragon_blood_stairs",
+        () -> new StairBlock(() -> PABlocks.DRAGON_BLOOD_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final  RegistryObject<Block> DRAGON_BLOOD_WOOD = registerBlock("dragon_blood_wood",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
     //change pDustColors
     public static final RegistryObject<Block> DARK_SAND = registerBlock("dark_sand",
