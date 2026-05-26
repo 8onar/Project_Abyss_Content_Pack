@@ -25,9 +25,15 @@ public class PABlockLootTables extends BlockLootSubProvider {
         this.dropSelf(PABlocks.NYTHERITE_BLOCK.get());
         this.dropSelf(PABlocks.UMBRYTE_BLOCK.get());
         this.dropSelf(PABlocks.GRAVIUM_BLOCK.get());
-
         this.dropSelf(PABlocks.DARK_GRAVEL.get());
         this.dropSelf(PABlocks.DARK_SAND.get());
+        this.dropSelf(PABlocks.DRAGON_BLOOD_LEAVES.get());
+        this.dropSelf(PABlocks.DRAGON_BLOOD_LOG.get());
+        this.dropSelf(PABlocks.DRAGON_BLOOD_PLANKS.get());
+//        this.dropSelf(PABlocks.DRAGON_BLOOD_SAPLING.get());
+        this.dropSelf(PABlocks.DRAGON_BLOOD_SLAB.get());
+        this.dropSelf(PABlocks.DRAGON_BLOOD_STAIRS.get());
+        this.dropSelf(PABlocks.DRAGON_BLOOD_WOOD.get());
 
         this.add(PABlocks.NYTHERITE_ORE.get(), block -> createOreDrop(PABlocks.NYTHERITE_ORE.get(), PAItems.RAW_NYTHERITE.get()));
         this.add(PABlocks.UMBRYTE_ORE.get(), block -> createOreDrop(PABlocks.UMBRYTE_ORE.get(), PAItems.RAW_UMBRYTE.get()));

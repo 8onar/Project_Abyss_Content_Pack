@@ -31,6 +31,11 @@ public class PACreativeTab {
                         output.accept(PABlocks.NYTHERITE_BLOCK.get());
                         output.accept(PABlocks.UMBRYTE_BLOCK.get());
                         output.accept(PABlocks.GRAVIUM_BLOCK.get());
+                        output.accept(PABlocks.DRAGON_BLOOD_LOG.get());
+                        output.accept(PABlocks.DRAGON_BLOOD_WOOD.get());
+                        output.accept(PABlocks.DRAGON_BLOOD_PLANKS.get());
+                        output.accept(PABlocks.DRAGON_BLOOD_STAIRS.get());
+                        output.accept(PABlocks.DRAGON_BLOOD_SLAB.get());
                     }).build());
     public static final RegistryObject<CreativeModeTab> TAB_COLORED_ABYSS_BLOCKS = CREATIVE_MODE_TABS.register("tab_colored_abyss_blocks",
             () -> CreativeModeTab
@@ -58,6 +63,9 @@ public class PACreativeTab {
                         output.accept(PABlocks.NYTHERITE_ORE.get());
                         output.accept(PABlocks.UMBRYTE_ORE.get());
                         output.accept(PABlocks.GRAVIUM_ORE.get());
+                        output.accept(PABlocks.DRAGON_BLOOD_LEAVES.get());
+                        output.accept(PABlocks.DRAGON_BLOOD_LOG.get());
+
                     }).build());
     public static final RegistryObject<CreativeModeTab> TAB_FUNC_ABYSS_BLOCKS = CREATIVE_MODE_TABS.register("tab_func_abyss_blocks",
             () -> CreativeModeTab

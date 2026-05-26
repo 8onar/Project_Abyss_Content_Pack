@@ -33,8 +33,19 @@ public class PABlockTagGenerator extends BlockTagsProvider {
                 PABlocks.UMBRYTE_BLOCK.get(),
                 PABlocks.GRAVIUM_BLOCK.get()
                 );
+        this.tag(BlockTags.LOGS).add(
+                    PABlocks.DRAGON_BLOOD_LOG.get()
+                );
 
-        this.tag(BlockTags.MINEABLE_WITH_AXE);
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+                PABlocks.DRAGON_BLOOD_LEAVES.get(),
+                PABlocks.DRAGON_BLOOD_LOG.get(),
+                PABlocks.DRAGON_BLOOD_PLANKS.get(),
+//                PABlocks.DRAGON_BLOOD_SAPLING.get(),
+                PABlocks.DRAGON_BLOOD_SLAB.get(),
+                PABlocks.DRAGON_BLOOD_STAIRS.get(),
+                PABlocks.DRAGON_BLOOD_WOOD.get()
+        );
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 PABlocks.DARK_SAND.get(),
                 PABlocks.DARK_GRAVEL.get()
@@ -61,5 +72,28 @@ public class PABlockTagGenerator extends BlockTagsProvider {
                 PABlocks.GRAVIUM_ORE.get()
         );
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+
+        this.tag(BlockTags.LOGS_THAT_BURN).add(
+                PABlocks.DRAGON_BLOOD_LOG.get(),
+                PABlocks.DRAGON_BLOOD_WOOD.get()
+        );
+        this.tag(BlockTags.PLANKS).add(
+                PABlocks.DRAGON_BLOOD_PLANKS.get()
+        );
+        this.tag(BlockTags.LOGS).add(
+                PABlocks.DRAGON_BLOOD_LOG.get()
+        );
+        this.tag(BlockTags.SLABS).add(
+                PABlocks.DRAGON_BLOOD_SLAB.get()
+        );
+        this.tag(BlockTags.STAIRS).add(
+                PABlocks.DRAGON_BLOOD_STAIRS.get()
+        );
+
+        this.tag(BlockTags.SAND).add(
+                PABlocks.DARK_SAND.get(),
+                PABlocks.DARK_GRAVEL.get()
+        );
+
     }
 }
